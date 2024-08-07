@@ -1,4 +1,6 @@
 version: "3.9"
+volums:
+  http-html-data:
 services:
   php-fpm:
     build:
