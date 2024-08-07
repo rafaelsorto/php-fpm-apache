@@ -5,14 +5,14 @@ services:
       context: .
       dockerfile: Dockerfile
     volumes:
-      - /home/rafael:/var/www/html
+      - ./app:/var/www/html
 
   apache-httpd:
     build:
       context: .
       dockerfile: ./apache/Dockerfile
     volumes:
-      - /home/rafael:/var/www/html
+      - ./app:/var/www/html
     ports:
       - "8080:80"
     depends_on:
