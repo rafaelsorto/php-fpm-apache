@@ -1,20 +1,18 @@
 version: "3.9"
-volumes:
-  http-html-data:
 services:
   php-fpm:
     build:
       context: .
       dockerfile: Dockerfile
     volumes:
-      - http-html-data:/var/www/html
+      - /home/rafael:/var/www/html
 
   apache-httpd:
     build:
       context: .
       dockerfile: ./apache/Dockerfile
     volumes:
-      - http-html-data:/var/www/html
+      - /home/rafael:/var/www/html
     ports:
       - "8080:80"
     depends_on:
